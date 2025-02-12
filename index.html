@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converter Biner, Desimal, Oktal, Heksadesimal</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lobster&display=swap">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="converter mt-5 p-4 shadow rounded">
+            <h1 class="text-center mb-4">Converter</h1>
+            <div class="form-group">
+                <label for="inputNumber">Masukkan Angka</label>
+                <input type="text" class="form-control" id="inputNumber" placeholder="Contoh: 1010, 123, 7F">
+            </div>
+            <div class="form-group">
+                <label for="inputType">Jenis Input</label>
+                <select class="form-control" id="inputType">
+                    <option value="binary">Biner</option>
+                    <option value="decimal">Desimal</option>
+                    <option value="octal">Oktal</option>
+                    <option value="hexadecimal">Heksadesimal</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="outputType">Convert Ke</label>
+                <select class="form-control" id="outputType">
+                    <option value="binary">Biner</option>
+                    <option value="decimal">Desimal</option>
+                    <option value="octal">Oktal</option>
+                    <option value="hexadecimal">Heksadesimal</option>
+                </select>
+            </div>
+            <button class="btn btn-primary btn-block" onclick="convertNumber()">Convert</button>
+            <div class="output mt-3">
+                <p id="result" class="text-center font-weight-bold"></p>
+            </div>
+        </div>
+    </div>
+    <script src="js/scripts.js"></script>
+</body>
+</html>

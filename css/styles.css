@@ -1,0 +1,23 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.converter {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ffffff;
+}
+
+h1 {
+    color: #007bff;
+    font-family: 'Lobster', cursive;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+#result {
+    color: #28a745;
+    font-size: 1.5em;
+}
