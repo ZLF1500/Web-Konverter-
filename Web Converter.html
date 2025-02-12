@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converter Biner, Desimal, Oktal, Heksadesimal</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .converter {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="converter mt-5">
+            <h1 class="text-center">Converter</h1>
+            <div class="form-group">
+                <label for="inputNumber">Masukkan Angka</label>
+                <input type="text" class="form-control" id="inputNumber">
+            </div>
+            <div class="form-group">
+                <label for="inputType">Jenis Input</label>
+                <select class="form-control" id="inputType">
+                    <option value="binary">Biner</option>
+                    <option value="decimal">Desimal</option>
+                    <option value="octal">Oktal</option>
+                    <option value="hexadecimal">Heksadesimal</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="outputType">Convert Ke</label>
+                <select class="form-control" id="outputType">
+                    <option value="binary">Biner</option>
+                    <option value="decimal">Desimal</option>
+                    <option value="octal">Oktal</option>
+                    <option value="hexadecimal">Heksadesimal</option>
+                </select>
+            </div>
+            <button class="btn btn-primary btn-block" onclick="convertNumber()">Convert</button>
+            <div class="output mt-3">
+                <p id="result"></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function convertNumber() {
+            let inputNumber = document.getElementById('inputNumber').value;
+            let inputType = document.getElementById('inputType').value;
+            let outputType = document.getElementById('outputType').value;
+            
+            let decimalValue;
+            
+            // Convert input to decimal
+            switch(inputType) {
+                case 'binary':
+                    decimalValue = parseInt(inputNumber, 2);
+                    break;
+                case 'decimal':
+                    decimalValue = parseInt(inputNumber, 10);
+                    break;
+                case 'octal':
+                    decimalValue = parseInt(inputNumber, 8);
+                    break;
+                case 'hexadecimal':
+                    decimalValue = parseInt(inputNumber, 16);
+                    break;
+            }
+            
+            let result;
+            
+            // Convert decimal to desired output
+            switch(outputType) {
+                case 'binary':
+                    result = decimalValue.toString(2);
+                    break;
+                case 'decimal':
+                    result = decimalValue.toString(10);
+                    break;
+                case 'octal':
+                    result = decimalValue.toString(8);
+                    break;
+                case 'hexadecimal':
+                    result = decimalValue.toString(16).toUpperCase();
+                    break;
+            }
+            
+            document.getElementById('result').innerText = `Hasil: ${result}`;
+        }
+    </script>
+</body>
+</html>
